@@ -1,6 +1,8 @@
 import mqtt from "mqtt";
 
-import { CONNECT_URL } from "../config/config";
+import config from "../config/config.js";
+
+const { CONNECT_URL } = config;
 
 const client = mqtt.connect(CONNECT_URL);
 

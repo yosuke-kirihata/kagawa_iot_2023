@@ -2,7 +2,9 @@ import dayjs from "dayjs";
 import mqtt from "mqtt";
 import { SerialPort, ReadlineParser } from "serialport";
 
-import { CONNECT_URL } from "../config/config";
+import config from "../config/config.js";
+
+const { CONNECT_URL } = config;
 
 const topic = "/kagawa/kosen/denkilab/rpi/00/sensor";
 

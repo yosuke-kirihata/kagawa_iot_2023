@@ -1,7 +1,9 @@
 import mqtt from "mqtt";
 
-import led from "../lib/led";
-import { CONNECT_URL, MY_TOPIC } from "../config/config";
+import config from "../config/config.js";
+import led from "./lib/led.js";
+
+const { CONNECT_URL, MY_TOPIC } = config;
 
 const THRESH_PPM = 1500;
 
