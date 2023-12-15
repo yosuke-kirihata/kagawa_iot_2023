@@ -7,7 +7,7 @@ const ROOTCA_CERT_PATH = BASE_CERT_PATH + ""; //ex: AmazonRootCA1.pem
 const UUID = ""; //ex:01
 const ENDPOINT = ""; //ex: piyo.iot.ap-northeast-1.amazonaws.com
 
-const topic = "/kagawa/kosen/denkilab/rpi/" + UUID;
+const topic = "kagawa/kosen/denkilab/rpi/" + UUID;
 
 const device = awsIot.device({
   keyPath: PRIVATE_KEY_PATH,

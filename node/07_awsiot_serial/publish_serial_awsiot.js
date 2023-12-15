@@ -9,7 +9,7 @@ const ROOTCA_CERT_PATH = BASE_CERT_PATH + ""; //ex: AmazonRootCA1.pem
 const UUID = ""; //ex:01
 const ENDPOINT = ""; //ex: piyo.iot.ap-northeast-1.amazonaws.com
 
-const topic = "/kagawa/kosen/denkilab/rpi/" + UUID;
+const topic = "kagawa/kosen/denkilab/rpi/" + UUID;
 
 const port = new SerialPort({
   path: "/dev/ttyACM0",

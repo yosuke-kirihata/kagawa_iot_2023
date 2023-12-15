@@ -6,7 +6,7 @@ const { CONNECT_URL } = config;
 
 const client = mqtt.connect(CONNECT_URL);
 
-const topic = "/kagawa/kosen/denkilab/rpi/00";
+const topic = "kagawa/kosen/denkilab/rpi/00";
 const message = "Hello MQTT!";
 
 client.on("connect", function () {

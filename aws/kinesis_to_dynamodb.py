@@ -11,7 +11,7 @@ import re
 TABLE_NAME = os.environ.get('TABLE_NAME', "default")
 DDB_PRIMARY_KEY = "device_id"
 DDB_SORT_KEY = "time"
-TOPIC_PREFIX="/kagawa/kosen/denkilab/rpi/"
+TOPIC_PREFIX="kagawa/kosen/denkilab/rpi/"
 #-----Dynamo Info change here------
 
 dynamodb = boto3.resource('dynamodb')
