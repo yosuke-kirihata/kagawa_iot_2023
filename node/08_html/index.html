@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MQTT over WebSocket Sample</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <h1>MQTT Sample over WebSocket</h1>
+
+  <div>送信先トピック</div>
+  <input type="text" id="txt_topic" size="40" value="kagawa/kosen/denkilab/rpi/00" />
+
+  <div>送信メッセージ</div>
+  <input type="text" id="txt_msg" size="40" value="" />
+  <input type="button" value="Publish" onclick="onButtonClick()"/>
+
+  <div>受信メッセージ</div>
+  <div id="lbl_receive"></div>
+
+  <script>
+    const client = mqtt.connect('ws://localhost:9001');
+    const TOPIC = 'kagawa/kosen/denkilab/rpi/00';
+
+    client.on('connect', () => {
+      console.log('connected');
+      client.subscribe(TOPIC);
+    });
+
+    client.on('message', (topic, message) => {
+      console.log("subscriber.on.message", "topic:", topic, "message:", message.toString());
+      document.getElementById("lbl_receive").innerText = message.toString();
+    });
+
+    function onButtonClick() {
+      const topic = document.getElementById("txt_topic").value;
+      const message = document.getElementById("txt_msg").value;
+      console.log(topic, message);
+      client.publish(topic, message);
+    }
+  </script>
+</body>
+</html>
