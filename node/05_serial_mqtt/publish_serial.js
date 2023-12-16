@@ -6,7 +6,7 @@ import config from "../config/config.js";
 
 const { CONNECT_URL } = config;
 
-const topic = "/kagawa/kosen/denkilab/rpi/00/sensor";
+const topic = "kagawa/kosen/denkilab/rpi/00/sensor";
 
 const client = mqtt.connect(CONNECT_URL);
 
